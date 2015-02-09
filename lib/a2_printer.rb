@@ -30,8 +30,8 @@ class A2Printer
     normal
     underline_off
     justify(:left)
-    set_line_height(32)
-    set_barcode_height(50)
+    set_line_height(default_for_line)
+    set_barcode_height(default_for_barcode)
   end
 
   # Feeds by the specified number of lines
