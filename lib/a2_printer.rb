@@ -221,5 +221,5 @@ class A2Printer
   end
 
   def normal
-
+  end
 end
