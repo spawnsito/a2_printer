@@ -89,9 +89,8 @@ class A2Printer
   end
 
   def sanitized_weight weight
-    re
     result = UNDERLINES[:none] if weight.nil?
-    weight = UNDERLINES[:thick] if weight > UNDERLINES[:thick]
+    result = UNDERLINES[:thick] if weight > UNDERLINES[:thick]
   end
 
   def underline_off
