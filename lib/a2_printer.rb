@@ -223,7 +223,6 @@ class A2Printer
     @print_mode.normal
   end
 
-
   def sanitized_weight weight
     result = weight
     result = UNDERLINES[:none] if weight.nil?
