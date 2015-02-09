@@ -3,9 +3,7 @@ class Bitmap
 
     def self.from_source source
       data = obtain_data source
-
-      tmp = data.getbyte
-      width = (data.getbyte << 8) + tmp
+      width = obtain_width data
       height = obtain_heigth data
       new(width, height, source)
     end
