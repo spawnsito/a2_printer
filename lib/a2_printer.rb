@@ -118,6 +118,8 @@ class A2Printer
     end
   end
 
+  def obtain_bitmap
+
   # Barcodes
 
   def set_barcode_height(val)
