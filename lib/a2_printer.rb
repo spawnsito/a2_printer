@@ -31,7 +31,6 @@ class A2Printer
     set_default_heights
   end
 
-  # Feeds by the specified number of lines
   def feed(lines=1)
     # The datasheet claims sending bytes ESC_SEQUENCE, 100, <x> will work
     # but it feeds much much more.
