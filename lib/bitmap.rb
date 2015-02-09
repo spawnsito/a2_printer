@@ -35,6 +35,8 @@ class Bitmap
         @height = height
     end
 
+    def wider_than? width
+
     def each_block
       row_start = 0
       width_in_bytes = width / 8
