@@ -1,4 +1,5 @@
 require "serial_connection"
+require "bitmap"
 
 class A2Printer
   def initialize(connection)
