@@ -30,6 +30,7 @@ class Bitmap
     end
 
     def initialize(width, height, source)
+        raise "Maximum width"
         set_source(source)
         @width = width
         @height = height
