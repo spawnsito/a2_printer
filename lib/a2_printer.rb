@@ -263,7 +263,6 @@ class A2Printer
   def modify_print_density print_density, print_break_time
     # Modify the print density and timeout
     write_bytes(18, 35)
-    calculate_print_density_setting print_density, print_break_time
     write_bytes(calculate_print_density_setting print_density, print_break_time) # Combination of print_density and print_break_time
   end
 
