@@ -55,7 +55,7 @@ class Bitmap
         bytes = (0...(width_in_bytes * chunk_height)).map { @data.getbyte }
         yield width_in_bytes, chunk_height, bytes
         connection.write_bytes(18, 42)
-        connection.write_bytes(h, w)
+        connection.write_bytes(h, width_in_bytes)
         connection.write_bytes(*bytes)
         row_start += 255
       end
