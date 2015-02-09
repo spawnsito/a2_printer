@@ -49,7 +49,7 @@ class A2Printer
   end
 
   def print(string)
-    string.bytes { |b| write(b) }
+    string.bytes { |byte| write(byte) }
   end
 
   def println(string)
