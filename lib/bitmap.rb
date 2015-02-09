@@ -1,7 +1,7 @@
 class Bitmap
     attr_reader :width, :height
 
-    def self.from_source
+    def self.from_source source
       if source.respond_to?(:getbyte)
         data = source
       else
