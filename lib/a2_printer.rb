@@ -103,7 +103,7 @@ class A2Printer
 
     if only_source_provided
       source = args[0]
-     bitmap = Bitmap.from_source source
+      bitmap = Bitmap.from_source source
     else
       bitmap = Bitmap.new *args
     end
