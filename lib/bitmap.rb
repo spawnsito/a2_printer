@@ -7,7 +7,7 @@ class Bitmap
       else
         data = StringIO.new(source.map(&:chr).join)
       end
-      set_source(width_or_source)
+
       extract_width_and_height_from_data
     end
 
