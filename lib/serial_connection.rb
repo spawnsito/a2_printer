@@ -15,7 +15,7 @@ class SerialConnection
     @serial.putc(byte)
   end
 
-  def write_bytes
+  def write_bytes *bytes
 
   end
 end
