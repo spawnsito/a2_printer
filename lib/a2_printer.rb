@@ -103,8 +103,8 @@ class A2Printer
       extract_width_and_height_from_data
     else
       set_source(source)
-      @width = width_or_source
-      @height = height
+      width = width_or_source
+      height = height
     end
 
     bitmap = Bitmap.new(width, height)
