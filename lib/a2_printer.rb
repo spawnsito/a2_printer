@@ -102,7 +102,6 @@ class A2Printer
   def print_bitmap(*args)
     only_source_provided = (args.size == 1)
 
-
     if only_source_provided
       source = args[0]
       bitmap = Bitmap.from_source source
