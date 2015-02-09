@@ -23,6 +23,8 @@ class A2Printer
   end
 
   def reset_formatting
+    default_for_line = 32
+
     online
     normal
     underline_off
