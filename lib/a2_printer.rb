@@ -265,7 +265,7 @@ class A2Printer
     write_bytes(setting)
   end
 
-  def calculate_print_density_setting print_density, print_break_time
+  def calculate_density_setting print_density, print_break_time
     (print_density << 4) | print_break_time
   end
 
