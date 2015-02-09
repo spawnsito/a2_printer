@@ -17,6 +17,6 @@ class TestConnection
   end
 
   def write_bytes(*bytes)
-    bytes.each { |b| @connection.putc(b) }
+    bytes.each { |b| putc(b) }
   end
 end
