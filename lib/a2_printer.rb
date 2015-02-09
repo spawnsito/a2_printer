@@ -78,10 +78,6 @@ class A2Printer
     write_bytes(29, 33, bytes[size], 10)
   end
 
-  # Underlines of different weights can be produced:
-  # 0 - no underline
-  # 1 - normal underline
-  # 2 - thick underline
   def underline_on(weight)
     weight = sanitized_weight weight
     write_bytes(ESC_SEQUENCE, 45, weight)
