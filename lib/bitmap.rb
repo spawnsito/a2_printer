@@ -31,7 +31,7 @@ class Bitmap
 
     def initialize(width, height, source)
         set_source(source)
-        @width = width_or_source
+        @width = width
         @height = height
     end
 
