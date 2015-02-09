@@ -30,7 +30,6 @@ class Bitmap
     end
 
     def initialize(width, height, source)
-        raise "Too wide" if width > 384
         set_source(source)
         @width = width
         @height = height
