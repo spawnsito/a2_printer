@@ -283,7 +283,6 @@ class A2Printer
 
   def set_control_parameters heat_time
     write_bytes(ESC_SEQUENCE, CONTROL_PARAMETERS)
-
     set_default_resolution
     set_heat_conditions heat_time
   end
