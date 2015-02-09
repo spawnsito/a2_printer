@@ -263,16 +263,5 @@ class A2Printer
     # delay(50) # ?
   end
 
-  # ==== not working? ====
-  def tab
-    write(9)
-  end
 
-  def set_char_spacing(spacing)
-    write_bytes(27, 32, 0, 10)
-  end
-
-  def set_line_height(val=32)
-    write_bytes(27, 51, val) # default is 32
-  end
 end
