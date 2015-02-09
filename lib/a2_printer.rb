@@ -11,7 +11,7 @@ class A2Printer
   CARRIAGE_RETURN = "\n"
   NOT_ALLOWED_CHAR = 0x13
   UNDERLINES = {
-    no_underline: 0,
+    none: 0,
     normal: 1,
     thick: 2
   }
