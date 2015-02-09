@@ -268,7 +268,7 @@ class A2Printer
   end
 
   def calculate_print_density_setting print_density, print_break_time
-
+    (print_density << 4) | print_break_time
   end
 
 end
