@@ -18,7 +18,7 @@ class A2Printer
     reset()
 
     write_bytes(27, 55)
-    write_bytes(DEFAULT_RESOLUTION)
+    set_default_resolution
 
     set_heat_conditions heat_time
 
