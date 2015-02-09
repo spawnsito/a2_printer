@@ -207,16 +207,6 @@ class A2Printer
     end
   end
 
-  # def print_bitmap(stream)
-  #   tmp = stream.getbyte
-  #   width = (stream.getbyte << 8) + tmp
-  #
-  #   tmp = stream.getbyte
-  #   height = (stream.getbyte << 8) + tmp
-  #
-  #   print_bitmap(width, height, stream)
-  # end
-
   # Barcodes
 
   def set_barcode_height(val)
