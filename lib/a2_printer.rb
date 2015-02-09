@@ -58,7 +58,7 @@ class A2Printer
     print(string + CARRIAGE_RETURN)
   end
 
-  def write(c)
+  def write(char)
     return if (c == NOT_ALLOWED_BYTE)
     write_bytes(c)
   end
