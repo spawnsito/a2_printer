@@ -8,6 +8,10 @@ class Bitmap
         data = StringIO.new(source.map(&:chr).join)
       end
 
+      tmp = @data.getbyte
+      @width = (@data.getbyte << 8) + tmp
+      tmp = @data.getbyte
+      @height = (@data.getbyte << 8) + tmp
       extract_width_and_height_from_data
     end
 
