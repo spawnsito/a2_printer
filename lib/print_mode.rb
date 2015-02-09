@@ -25,7 +25,6 @@ class PrintMode
   def write_print_mode
     bytes = [ESC_SEQUENCE, 33, @print_mode]
     @connection.write_bytes bytes
-    bytes.each { |bytes| @connection.putc(bytes) }
   end
 
   def normal
