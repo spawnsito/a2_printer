@@ -125,7 +125,7 @@ class A2Printer
       source = args[0]
       bitmap = Bitmap.from_source source
     else
-      bitmap = Bitmap.new *args
+      bitmap = Bitmap.new args
     end
   end
 
