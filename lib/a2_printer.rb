@@ -31,7 +31,6 @@ class A2Printer
     normal
     underline_off
     justify(:left)
-
     set_default_heights
   end
 
@@ -220,5 +219,7 @@ class A2Printer
   def write_bytes(*bytes)
     bytes.each { |b| @connection.putc(b) }
   end
+
+  def normal
 
 end
