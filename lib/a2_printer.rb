@@ -39,6 +39,7 @@ class A2Printer
   end
 
   def line_feed
+    write(LINE_FEED)
   end
 
   # Feeds by the specified number of rows of pixels
