@@ -118,7 +118,7 @@ class A2Printer
     end
   end
 
-  def obtain_bitmap *args
+  def obtain_bitmap args
     only_source_provided = (args.size == 1)
 
     if only_source_provided
