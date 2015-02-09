@@ -16,7 +16,7 @@ class SerialConnection
   end
 
   def write_bytes *bytes
-
+    bytes.each { |b| @connection.putc(b) }
   end
 end
 
