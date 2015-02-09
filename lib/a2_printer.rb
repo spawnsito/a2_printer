@@ -78,7 +78,7 @@ class A2Printer
   # 1 - normal underline
   # 2 - thick underline
   def underline_on(weight)
-    if weight.nil?
+    weight = 0 if weight.nil?
     write_bytes(ESC_SEQUENCE, 45, weight)
   end
 
