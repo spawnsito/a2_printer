@@ -18,7 +18,6 @@ class A2Printer
 
   def begin(heat_time)
     reset()
-
     set_control_parameters heat_time
     modify_density(calculate_density_setting)
   end
