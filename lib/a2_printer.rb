@@ -63,6 +63,10 @@ class A2Printer
     write_bytes(char)
   end
 
+  def not_allowed? char
+    char == NOT_ALLOWED_CHAR
+  end
+
   def write_bytes(*bytes)
     bytes.each { |b| @connection.putc(b) }
   end
