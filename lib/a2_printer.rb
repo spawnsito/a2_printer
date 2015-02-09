@@ -23,13 +23,13 @@ class A2Printer
   end
 
   def reset_formatting
-    default_for_line = 32
-    default_for_barcode = 50
-
     online
     normal
     underline_off
     justify(:left)
+
+    default_for_line = 32
+    default_for_barcode = 50
     set_line_height(default_for_line)
     set_barcode_height(default_for_barcode)
   end
