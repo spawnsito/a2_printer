@@ -118,8 +118,15 @@ class A2Printer
     end
   end
 
-  def obtain_bitmap
+  def obtain_bitmap *args
+    only_source_provided = (args.size == 1)
 
+    if only_source_provided
+      source = args[0]
+      bitmap = Bitmap.from_source source
+    else
+      bitmap = Bitmap.new *args
+    end
   end
 
   # Barcodes
