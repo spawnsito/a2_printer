@@ -35,6 +35,13 @@ class A2Printer
     set_barcode_height(default_for_barcode)
   end
 
+  def set_default_heights
+    default_for_line = 32
+    default_for_barcode = 50
+    set_line_height(default_for_line)
+    set_barcode_height(default_for_barcode)
+  end
+
   # Feeds by the specified number of lines
   def feed(lines=1)
     # The datasheet claims sending bytes ESC_SEQUENCE, 100, <x> will work
