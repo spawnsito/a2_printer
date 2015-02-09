@@ -4,6 +4,7 @@ require "bitmap"
 class A2Printer
 
   DEFAULT_RESOLUTION = 7
+  ESC_SEQUENCE = 27
 
   def initialize(connection)
     @connection = connection
