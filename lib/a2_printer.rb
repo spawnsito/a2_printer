@@ -221,5 +221,6 @@ class A2Printer
   end
 
   def normal
+    @print_mode.normal
   end
 end
