@@ -127,6 +127,8 @@ class A2Printer
     else
       bitmap = Bitmap.new args
     end
+
+    bitmap
   end
 
   # Barcodes
