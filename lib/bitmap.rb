@@ -3,7 +3,7 @@ class Bitmap
 
     def self.from_source
       set_source(width_or_source)
-        extract_width_and_height_from_data
+      extract_width_and_height_from_data
     end
 
     def initialize(width_or_source, height=nil, source=nil)
