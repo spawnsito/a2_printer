@@ -103,6 +103,7 @@ class A2Printer
     bitmap = obtain_bitmap *args
 
     return if bitmap.wider_than? MAXIMUM_WIDTH
+
     bitmap.each_block do |w, h, bytes|
       write_bytes(18, 42)
       write_bytes(h, w)
