@@ -93,16 +93,8 @@ class A2Printer
       center: 1,
       right: 2
     }
-    byte = case position
-    when :left
-      0
-    when :center
-      1
-    when :right
-      2
-    end
 
-    write_bytes(0x1B, 0x61, byte)
+    write_bytes(0x1B, 0x61, bytes[:position])
   end
 
   def print_bitmap(*args)
