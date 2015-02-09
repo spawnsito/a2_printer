@@ -269,8 +269,8 @@ class A2Printer
   def set_heat_conditions heat_time
     heat_time = 150 if heat_time.nil?
     heat_interval = 50
-    write_bytes(heat_time) # Default 80 or 800us
-    write_bytes(heat_interval) # Default 2 or 20us
+    write_bytes(heat_time)
+    write_bytes(heat_interval)
   end
 
 end
