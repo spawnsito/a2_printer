@@ -12,7 +12,7 @@ class A2Printer
 
   def initialize(connection)
     @connection = connection
-    @print_mode = 0
+    @print_mode = PrintMode.new
   end
 
   def begin(heat_time)
