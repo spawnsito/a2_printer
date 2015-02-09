@@ -100,7 +100,6 @@ class A2Printer
   def print_bitmap(*args)
     if height.nil? && source.nil?
       source = width_or_source
-      extract_width_and_height_from_data
     else
       set_source(source)
       width = width_or_source
