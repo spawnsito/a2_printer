@@ -36,7 +36,7 @@ class Bitmap
     end
 
     def wider_than? width
-
+      @width > width
     end
 
     def each_block
