@@ -65,7 +65,7 @@ describe A2Printer do
     it "sets the defaults" do
       @printer.expects(:online)
       @printer.expects(:justify).with(:left)
-      @printer.expects(:normal).with('a print mode')
+      @printer.expects(:normal)
       @printer.expects(:underline_off)
       @printer.expects(:set_line_height).with(32)
       @printer.set_default
