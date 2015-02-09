@@ -16,7 +16,11 @@ class Bitmap
     end
 
     def self.obtain_data source
-
+      if source.respond_to?(:getbyte)
+        data = source
+      else
+        data = StringIO.new(source.map(&:chr).join)
+      end
     end
 
     def initialize(width_or_source, height=nil, source=nil)
