@@ -24,7 +24,7 @@ class A2Printer
 
     density = 15 # Not sure what the default is. Testing shows the max helps darken text. From page 23.
     break_time = 15 # Not sure what the default is. Testing shows the max helps darken text. From page 23.
-    modify_density(calculate_density_setting(density, break_time))
+    modify_density(calculate_density_setting)
   end
 
   def reset
