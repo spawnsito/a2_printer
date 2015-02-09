@@ -41,9 +41,9 @@ class Bitmap
 
     def print connection
       each_block do |w, h, bytes|
-        write_bytes(18, 42)
-        write_bytes(h, w)
-        write_bytes(*bytes)
+        connection.write_bytes(18, 42)
+        connection.write_bytes(h, w)
+        connection.write_bytes(*bytes)
       end
     end
 
