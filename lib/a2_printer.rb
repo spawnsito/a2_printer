@@ -112,17 +112,7 @@ class A2Printer
   end
 
 
-  def obtain_bitmap *args
-    only_source_provided = (args.size == 1)
 
-    if only_source_provided
-      source = args[0]
-      bitmap = Bitmap.from_source source
-    else
-      bitmap = Bitmap.new *args
-    end
-    bitmap
-  end
 
   # Barcodes
 
@@ -242,5 +232,17 @@ class A2Printer
     result = UNDERLINES[:none] if weight.nil?
     result = UNDERLINES[:thick] if weight > UNDERLINES[:thick]
     result
+  end
+
+  def obtain_bitmap *args
+    only_source_provided = (args.size == 1)
+
+    if only_source_provided
+      source = args[0]
+      bitmap = Bitmap.from_source source
+    else
+      bitmap = Bitmap.new *args
+    end
+    bitmap
   end
 end
