@@ -99,7 +99,8 @@ class A2Printer
 
   def print_bitmap(*args)
     bitmap = Bitmap.from_source args[0] if args.size == 1
-    bitmap = Bitmap.new(*args)
+
+    bitmap = Bitmap.new(*args) if args.size != 1
     return if (bitmap.width > 384) # maximum width of the printer
     bitmap.each_block do |w, h, bytes|
       write_bytes(18, 42)
