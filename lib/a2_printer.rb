@@ -280,7 +280,7 @@ class A2Printer
     write_bytes(DEFAULT_RESOLUTION)
   end
 
-  def set_control_parameter
+  def set_control_parameters
     write_bytes(ESC_SEQUENCE, 55)
 
     set_default_resolution
