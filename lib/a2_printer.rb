@@ -14,8 +14,6 @@ class A2Printer
   def begin(heat_time)
     reset()
 
-    heat_interval = 50 # 2 is default from page 23 of datasheet. Controls speed of printing and darkness
-
     write_bytes(27, 55)
     write_bytes(7) # Default 64 dots = 8*('7'+1)
 
