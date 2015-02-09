@@ -24,6 +24,7 @@ class A2Printer
 
   def reset_formatting
     default_for_line = 32
+    default_for_barcode = 50
 
     online
     normal
