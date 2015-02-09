@@ -40,10 +40,16 @@ class Bitmap
     end
 
     def print connection
-      each_block do |w, h, bytes|
+      row_start = 0
+      width_in_bytes = width / 8
+      while row_start < height do
+        chunk_height = ((height - row_start) > 255) ? 255 : (height - row_start)
+        bytes = (0...(width_in_bytes * chunk_height)).map { @data.getbyte }
+
         connection.write_bytes(18, 42)
-        connection.write_bytes(h, w)
-        connection.write_bytes(*bytes)
+        connection.write_bytes(chunk_height, width_in_bytes)
+        connection.write_bytes(bytes)
+        row_start += 255
       end
     end
 
