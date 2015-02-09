@@ -64,6 +64,11 @@ class A2Printer
   end
 
   def set_size(size)
+    bytes = {
+      small: 0,
+      medium: 10,
+      large: 25
+    }
     byte = case size
     when :small
       0
@@ -73,7 +78,7 @@ class A2Printer
       25
     end
 
-    write_bytes(29, 33, byte, 10)
+    write_bytes(29, 33, bytes[size], 10)
   end
 
   # Underlines of different weights can be produced:
