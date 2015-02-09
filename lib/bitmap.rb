@@ -48,7 +48,7 @@ class Bitmap
 
         connection.write_bytes(18, 42)
         connection.write_bytes(chunk_height, width_in_bytes)
-        connection.write_bytes(bytes)
+        connection.write_bytes(*bytes)
         row_start += 255
       end
     end
