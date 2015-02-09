@@ -98,13 +98,7 @@ class A2Printer
   end
 
   def print_bitmap(*args)
-    if height.nil? && source.nil?
-      source = width_or_source
-    else
-      source = source
-      width = width_or_source
-      height = height
-    end
+
 
     bitmap = Bitmap.new(width, height)
     return if (bitmap.width > 384) # maximum width of the printer
