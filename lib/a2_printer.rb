@@ -18,10 +18,9 @@ class A2Printer
     reset()
 
     write_bytes(27, 55)
+
     set_default_resolution
-
     set_heat_conditions heat_time
-
     modify_density(calculate_density_setting)
   end
 
