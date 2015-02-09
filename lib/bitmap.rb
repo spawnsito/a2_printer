@@ -35,7 +35,9 @@ class Bitmap
         @height = height
     end
 
+    def wider_than?
 
+    end
 
     def each_block
       row_start = 0
