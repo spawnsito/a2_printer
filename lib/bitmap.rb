@@ -12,7 +12,7 @@ class Bitmap
       width = (data.getbyte << 8) + tmp
       tmp = data.getbyte
       height = (data.getbyte << 8) + tmp
-      new()
+      new(width, height, source)
     end
 
     def self.extract_width
