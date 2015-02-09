@@ -36,10 +36,6 @@ class A2Printer
     lines.times { line_feed }
   end
 
-  def line_feed
-    write(LINE_FEED)
-  end
-
   # Feeds by the specified number of rows of pixels
   def feed_rows(rows)
     write_bytes(ESC_SEQUENCE, 74, rows)
@@ -256,6 +252,10 @@ class A2Printer
   end
 
   private
+
+  def line_feed
+    write(LINE_FEED)
+  end
 
   def set_default_heights
     default_for_line = 32
