@@ -94,7 +94,7 @@ class A2Printer
       right: 2
     }
 
-    write_bytes(0x1B, 0x61, bytes[:position])
+    write_bytes(0x1B, 0x61, bytes[position])
   end
 
   def print_bitmap(*args)
