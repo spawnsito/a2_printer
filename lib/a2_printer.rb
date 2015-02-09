@@ -256,8 +256,8 @@ class A2Printer
   def set_default
     reset_formatting
   end
-  private
 
+  private
 
   def modify_density setting
     write_bytes(18, 35)
