@@ -99,7 +99,7 @@ class A2Printer
   # This will reset bold, inverse, strikeout, upside down and font size
   # It does not reset underline, justification or line height
   def normal
-    @print_mode = 0
+    # @print_mode = 0
     write_print_mode
   end
 
