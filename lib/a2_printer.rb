@@ -28,6 +28,7 @@ class A2Printer
     underline_off
     justify(:left)
 
+    set_default_heights
     default_for_line = 32
     default_for_barcode = 50
     set_line_height(default_for_line)
