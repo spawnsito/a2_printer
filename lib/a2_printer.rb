@@ -101,7 +101,7 @@ class A2Printer
     if height.nil? && source.nil?
       source = width_or_source
     else
-      set_source(source)
+      source = source
       width = width_or_source
       height = height
     end
