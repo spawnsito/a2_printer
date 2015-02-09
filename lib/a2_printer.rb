@@ -54,7 +54,7 @@ class A2Printer
   end
 
   def println(string)
-    print(string + "\n")
+    print(string + CARRIAGE_RETURN)
   end
 
   def write(c)
