@@ -100,15 +100,6 @@ class A2Printer
   end
 
   def print_bitmap(*args)
-    # only_source_provided = (args.size == 1)
-
-    # if only_source_provided
-    #   source = args[0]
-    #   bitmap = Bitmap.from_source source
-    # else
-    #   bitmap = Bitmap.new *args
-    # end
-
     bitmap = obtain_bitmap *args
 
     return if bitmap.wider_than? MAXIMUM_WIDTH
