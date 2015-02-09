@@ -18,7 +18,7 @@ class A2Printer
   def begin(heat_time)
     reset()
 
-    write_bytes(27, 55)
+    write_bytes(ESC_SEQUENCE, 55)
 
     set_default_resolution
     set_heat_conditions heat_time
@@ -26,7 +26,7 @@ class A2Printer
   end
 
   def reset
-    write_bytes(27, 64)
+    write_bytes(ESC_SEQUENCE, 64)
   end
 
   # reset formatting
@@ -41,14 +41,14 @@ class A2Printer
 
   # Feeds by the specified number of lines
   def feed(lines=1)
-    # The datasheet claims sending bytes 27, 100, <x> will work
+    # The datasheet claims sending bytes ESC_SEQUENCE, 100, <x> will work
     # but it feeds much much more.
     lines.times { write(10) }
   end
 
   # Feeds by the specified number of rows of pixels
   def feed_rows(rows)
-    write_bytes(27, 74, rows)
+    write_bytes(ESC_SEQUENCE, 74, rows)
   end
 
   def flush
@@ -96,7 +96,7 @@ class A2Printer
   end
 
   def write_print_mode
-    write_bytes(27, 33, @print_mode)
+    write_bytes(ESC_SEQUENCE, 33, @print_mode)
   end
 
   # This will reset bold, inverse, strikeout, upside down and font size
@@ -172,7 +172,7 @@ class A2Printer
   # 1 - normal underline
   # 2 - thick underline
   def underline_on(weight=1)
-    write_bytes(27, 45, weight)
+    write_bytes(ESC_SEQUENCE, 45, weight)
   end
 
   def underline_off
@@ -230,13 +230,13 @@ class A2Printer
   # Take the printer offline. Print commands sent after this will be
   # ignored until `online` is called
   def offline
-    write_bytes(27, 61, 0)
+    write_bytes(ESC_SEQUENCE, 61, 0)
   end
 
   # Take the printer back online. Subsequent print commands will be
   # obeyed.
   def online
-    write_bytes(27, 61, 1)
+    write_bytes(ESC_SEQUENCE, 61, 1)
   end
 
   # Put the printer into a low-energy state immediately
@@ -247,7 +247,7 @@ class A2Printer
   # Put the printer into a low-energy state after the given number
   # of seconds
   def sleep_after(seconds)
-    write_bytes(27, 56, seconds)
+    write_bytes(ESC_SEQUENCE, 56, seconds)
   end
 
   # Wake the printer from a low-energy state. This command will wait
