@@ -59,7 +59,7 @@ class A2Printer
   end
 
   def write(char)
-    return if (c == NOT_ALLOWED_BYTE)
+    return if (char == NOT_ALLOWED_BYTE)
     write_bytes(c)
   end
 
