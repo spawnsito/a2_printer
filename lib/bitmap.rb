@@ -35,7 +35,7 @@ class Bitmap
         @height = height
     end
 
-    def wider_than?
+    def wider_than? width
 
     end
 
