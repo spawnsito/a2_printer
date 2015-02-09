@@ -276,4 +276,7 @@ class A2Printer
     write_bytes(heat_interval)
   end
 
+  def set_default_resolution
+    write_bytes(DEFAULT_RESOLUTION)
+  end
 end
