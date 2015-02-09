@@ -30,14 +30,9 @@ class Bitmap
     end
 
     def initialize(width, height, source)
-      if height.nil? && source.nil?
-        set_source(width_or_source)
-        extract_width_and_height_from_data
-      else
         set_source(source)
         @width = width_or_source
         @height = height
-      end
     end
 
     def each_block
