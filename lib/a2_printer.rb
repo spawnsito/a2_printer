@@ -2,6 +2,9 @@ require "serial_connection"
 require "bitmap"
 
 class A2Printer
+
+  DEFAULT_RESOLUTION = 7
+
   def initialize(connection)
     @connection = connection
     @print_mode = 0
@@ -15,7 +18,7 @@ class A2Printer
     reset()
 
     write_bytes(27, 55)
-    write_bytes(7) # Default 64 dots = 8*('7'+1)
+    write_bytes(DEFAULT_RESOLUTION)
 
     set_heat_conditions heat_time
 
