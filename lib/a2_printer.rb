@@ -101,6 +101,7 @@ class A2Printer
     only_source_provided = (args.size == 1)
 
     if only_source_provided
+      Bitmap.from_source args[0]
     end
 
     bitmap = Bitmap.from_source args[0] if only_source_provided
