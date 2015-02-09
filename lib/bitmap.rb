@@ -10,6 +10,10 @@ class Bitmap
 
     end
 
+    def self.extract_height
+
+    end
+
     def initialize(width_or_source, height=nil, source=nil)
       if height.nil? && source.nil?
         set_source(width_or_source)
