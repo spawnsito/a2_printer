@@ -1,5 +1,6 @@
 require "serial_connection"
 require "bitmap"
+require "print_mode"
 
 class A2Printer
 
