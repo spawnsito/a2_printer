@@ -13,7 +13,7 @@ describe A2Printer do
 
   it "can be reset" do
     @printer.reset
-    sent_bytes.must_equal [27, 64]
+    sent_bytes.must_equal [ESC_SEQUENCE, 64]
   end
 
   it "prints a test page" do
@@ -28,12 +28,12 @@ describe A2Printer do
 
   it "can be set offline" do
     @printer.offline
-    sent_bytes.must_equal [27, 61, 0]
+    sent_bytes.must_equal [ESC_SEQUENCE, 61, 0]
   end
 
   it "can be set offline" do
     @printer.online
-    sent_bytes.must_equal [27, 61, 1]
+    sent_bytes.must_equal [ESC_SEQUENCE, 61, 1]
   end
 
   describe "feeding" do
@@ -52,8 +52,8 @@ describe A2Printer do
     it "resets the print settings" do
       @printer.begin(100)
       sent_bytes.must_equal [
-        27, 64, # reset
-        27, 55, # start control parameter command
+        ESC_SEQUENCE, 64, # reset
+        ESC_SEQUENCE, 55, # start control parameter command
                 7, # dots
                 100, # heat time
                 50, # heat interval
