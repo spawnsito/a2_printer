@@ -23,10 +23,7 @@ class A2Printer
     write_bytes(heat_time) # Default 80 or 800us
     write_bytes(heat_interval) # Default 2 or 20us
 
-    # Modify the print density and timeout
-    write_bytes(18, 35)
-    print_setting = (print_density<<4) | print_break_time
-    write_bytes(print_setting) # Combination of print_density and print_break_time
+    modify_print_density print_density, print_break_time
   end
 
   # reset printer
