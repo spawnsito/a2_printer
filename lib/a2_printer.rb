@@ -88,6 +88,11 @@ class A2Printer
   end
 
   def justify(position)
+    bytes = {
+      left: 0,
+      center: 1,
+      right: 2
+    }
     byte = case position
     when :left
       0
