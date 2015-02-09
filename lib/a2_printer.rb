@@ -38,6 +38,7 @@ class A2Printer
     lines.times { write(LINE_FEED) }
   end
 
+  def line_feed
 
   # Feeds by the specified number of rows of pixels
   def feed_rows(rows)
