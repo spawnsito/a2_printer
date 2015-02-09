@@ -35,7 +35,7 @@ class A2Printer
   def feed(lines=1)
     # The datasheet claims sending bytes ESC_SEQUENCE, 100, <x> will work
     # but it feeds much much more.
-    lines.times { write(LINE_FEED) }
+    lines.times { line_feed }
   end
 
   def line_feed
