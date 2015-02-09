@@ -48,7 +48,7 @@ class Bitmap
     end
 
     def write_bytes(*bytes, connection)
-      bytes.each { |b| @connection.putc(b) }
+      bytes.each { |b| connection.putc(b) }
     end
 
     def each_block
