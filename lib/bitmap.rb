@@ -40,7 +40,7 @@ class Bitmap
     end
 
     def print connection
-      bitmap.each_block do |w, h, bytes|
+      each_block do |w, h, bytes|
         write_bytes(18, 42)
         write_bytes(h, w)
         write_bytes(*bytes)
