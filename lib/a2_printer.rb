@@ -37,7 +37,7 @@ class A2Printer
   end
 
   # Feeds by the specified number of rows of pixels
-  def feed_rows(rows)
+  def feed_rows(rows = 0)
     write_bytes(ESC_SEQUENCE, 74, rows)
   end
 
