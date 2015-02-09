@@ -69,14 +69,6 @@ class A2Printer
       medium: 10,
       large: 25
     }
-    byte = case size
-    when :small
-      0
-    when :medium
-      10
-    when :large
-      25
-    end
 
     write_bytes(29, 33, bytes[size], 10)
   end
