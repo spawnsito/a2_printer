@@ -16,6 +16,8 @@ class A2Printer
     thick: 2
   }
 
+  MAXIMUM_WIDTH = 384
+
   def initialize(connection)
     @connection = connection
     @print_mode = PrintMode.new @connection
