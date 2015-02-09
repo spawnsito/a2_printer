@@ -14,6 +14,7 @@ class TestConnection
   def putc(byte)
     @bytes << byte
   end
+
   def write_bytes(*bytes)
     bytes.each { |b| @connection.putc(b) }
   end
