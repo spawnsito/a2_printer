@@ -84,7 +84,7 @@ class A2Printer
   end
 
   def underline_off
-    underline_on(0)
+    underline_on(UNDERLINES[:none])
   end
 
   def justify(position)
