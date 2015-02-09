@@ -109,7 +109,7 @@ class A2Printer
     end
 
 
-    return if bitmap.wider_than? # maximum width of the printer
+    return if bitmap.wider_than? MAXIMUM_WIDTH # maximum width of the printer
     bitmap.each_block do |w, h, bytes|
       write_bytes(18, 42)
       write_bytes(h, w)
