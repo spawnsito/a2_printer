@@ -19,6 +19,7 @@ class A2Printer
     write_bytes(27, 55)
     write_bytes(7) # Default 64 dots = 8*('7'+1)
 
+     heat_interval = 50 # 2 is default from page 23 of datasheet. Controls speed of printing and darkness
     write_bytes(heat_time) # Default 80 or 800us
     write_bytes(heat_interval) # Default 2 or 20us
 
