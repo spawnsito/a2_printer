@@ -271,4 +271,8 @@ class A2Printer
     (density << 4) | break_time
   end
 
+  def set_heat_conditions
+
+  end
+
 end
