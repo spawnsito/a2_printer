@@ -36,7 +36,6 @@ class A2Printer
     lines.times { line_feed }
   end
 
-  # Feeds by the specified number of rows of pixels
   def feed_rows(rows = 0)
     write_bytes(ESC_SEQUENCE, 74, rows)
   end
