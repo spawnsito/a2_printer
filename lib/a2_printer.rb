@@ -19,10 +19,7 @@ class A2Printer
   def begin(heat_time)
     reset()
 
-    write_bytes(ESC_SEQUENCE, 55)
-
-    set_default_resolution
-    set_heat_conditions heat_time
+    set_control_parameters heat_time
     modify_density(calculate_density_setting)
   end
 
