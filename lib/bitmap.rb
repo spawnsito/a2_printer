@@ -15,7 +15,7 @@ class Bitmap
       new(width, height, source)
     end
 
-    def self.obtain_data
+    def self.obtain_data source
 
     end
 
