@@ -197,10 +197,6 @@ class A2Printer
     write_bytes(0x1B, 0x61, byte)
   end
 
-  # Bitmaps
-
-
-
   def print_bitmap(*args)
     bitmap = Bitmap.new(*args)
     return if (bitmap.width > 384) # maximum width of the printer
