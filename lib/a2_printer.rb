@@ -107,7 +107,7 @@ class A2Printer
       @height = height
     end
 
-    bitmap = Bitmap.new(*args)
+    bitmap = Bitmap.new(width, height)
     return if (bitmap.width > 384) # maximum width of the printer
     bitmap.each_block do |w, h, bytes|
       write_bytes(18, 42)
