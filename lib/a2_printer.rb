@@ -8,6 +8,7 @@ class A2Printer
   CONTROL_PARAMETERS = 55
   LINE_FEED = 10
   CARRIAGE_RETURN = '\n'
+  NOT_ALLOWED_BYTE = 0x13
 
   def initialize(connection)
     @connection = connection
