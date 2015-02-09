@@ -39,7 +39,7 @@ class Bitmap
       @width > width
     end
 
-    def method_name
+    def print
 
     end
 
