@@ -271,7 +271,7 @@ class A2Printer
     (density << 4) | break_time
   end
 
-  def set_heat_conditions
+  def set_heat_conditions heat_time
     heat_time = 150 if heat_time.nil?
     heat_interval = 50 # 2 is default from page 23 of datasheet. Controls speed of printing and darkness
     write_bytes(heat_time) # Default 80 or 800us
