@@ -39,7 +39,7 @@ class Bitmap
       @width > width
     end
 
-    def print
+    def print connection
 
     end
 
