@@ -6,8 +6,7 @@ class Bitmap
 
       tmp = data.getbyte
       width = (data.getbyte << 8) + tmp
-      tmp = data.getbyte
-      height = (data.getbyte << 8) + tmp
+      height = obtain_heigth data
       new(width, height, source)
     end
 
