@@ -25,6 +25,12 @@ class Bitmap
       height
     end
 
+    def self.obtain_width
+      tmp = data.getbyte
+      height = (data.getbyte << 8) + tmp
+      height
+    end
+
     def initialize(width_or_source, height=nil, source=nil)
       if height.nil? && source.nil?
         set_source(width_or_source)
