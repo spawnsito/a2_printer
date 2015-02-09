@@ -6,6 +6,7 @@ class A2Printer
   DEFAULT_RESOLUTION = 7
   ESC_SEQUENCE = 27
   CONTROL_PARAMETERS = 55
+  LINE_FEED = 10
 
   def initialize(connection)
     @connection = connection
@@ -36,6 +37,7 @@ class A2Printer
     # but it feeds much much more.
     lines.times { write(10) }
   end
+
 
   # Feeds by the specified number of rows of pixels
   def feed_rows(rows)
