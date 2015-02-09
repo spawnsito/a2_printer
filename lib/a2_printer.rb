@@ -263,5 +263,10 @@ class A2Printer
     # delay(50) # ?
   end
 
-
+  def modify_print_density print_density
+    # Modify the print density and timeout
+    write_bytes(18, 35)
+    print_setting = (print_density<<4) | print_break_time
+    write_bytes(print_setting) # Combination of print_density and print_break_time
+  end
 end
