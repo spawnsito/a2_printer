@@ -17,13 +17,13 @@ class Bitmap
       data
     end
 
-    def self.obtain_heigth
+    def self.obtain_heigth data
       tmp = data.getbyte
       height = (data.getbyte << 8) + tmp
       height
     end
 
-    def self.obtain_width
+    def self.obtain_width data
       tmp = data.getbyte
       width = (data.getbyte << 8) + tmp
       width
