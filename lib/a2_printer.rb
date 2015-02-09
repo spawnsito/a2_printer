@@ -10,7 +10,11 @@ class A2Printer
   LINE_FEED = 10
   CARRIAGE_RETURN = "\n"
   NOT_ALLOWED_CHAR = 0x13
-  NO_UNDERLINE = 0
+  UNDERLINES = {
+    no_underline: 0,
+    normal: 1,
+    thick: 2
+  }
 
   def initialize(connection)
     @connection = connection
