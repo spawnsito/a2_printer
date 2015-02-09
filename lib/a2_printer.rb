@@ -22,7 +22,6 @@ class A2Printer
     write_bytes(ESC_SEQUENCE, 64)
   end
 
-  # reset formatting
   def set_default
     reset_formatting
   end
