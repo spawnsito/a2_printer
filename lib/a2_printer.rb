@@ -22,8 +22,6 @@ class A2Printer
     write_bytes(heat_time) # Default 80 or 800us
     write_bytes(heat_interval) # Default 2 or 20us
 
-    density = 15 # Not sure what the default is. Testing shows the max helps darken text. From page 23.
-    break_time = 15 # Not sure what the default is. Testing shows the max helps darken text. From page 23.
     modify_density(calculate_density_setting)
   end
 
