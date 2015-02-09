@@ -253,6 +253,8 @@ class A2Printer
     # delay(50) # ?
   end
 
+  private
+
   def modify_density setting
     write_bytes(18, 35)
     write_bytes(setting)
