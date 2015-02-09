@@ -53,21 +53,6 @@ class Bitmap
       end
     end
 
-    def each_block
-      row_start = 0
-      width_in_bytes = width / 8
-      while row_start < height do
-        chunk_height = ((height - row_start) > 255) ? 255 : (height - row_start)
-        bytes = (0...(width_in_bytes * chunk_height)).map { @data.getbyte }
-
-        yield width_in_bytes, chunk_height, bytes
-        connection.write_bytes(18, 42)
-        connection.write_bytes(chunk_height, width_in_bytes)
-        connection.write_bytes(bytes)
-        row_start += 255
-      end
-    end
-
     private
 
     def set_source(source)
