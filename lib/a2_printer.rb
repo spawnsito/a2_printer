@@ -111,9 +111,6 @@ class A2Printer
     end
   end
 
-
-
-
   # Barcodes
 
   def set_barcode_height(val)
