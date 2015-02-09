@@ -88,7 +88,8 @@ class A2Printer
     write_bytes(ESC_SEQUENCE, 45, weight)
   end
 
-  def sanitized_weight
+  def sanitized_weight weight
+    result = weight
   end
 
   def underline_off
