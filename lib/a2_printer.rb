@@ -119,7 +119,7 @@ class A2Printer
   end
 
 
-  def obtain_bitmap
+  def obtain_bitmap *args
 
   # Barcodes
 
