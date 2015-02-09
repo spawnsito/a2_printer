@@ -2,11 +2,7 @@ class Bitmap
     attr_reader :width, :height
 
     def self.from_source source
-      if source.respond_to?(:getbyte)
-        data = source
-      else
-        data = StringIO.new(source.map(&:chr).join)
-      end
+      data = obtain_data
 
       tmp = data.getbyte
       width = (data.getbyte << 8) + tmp
