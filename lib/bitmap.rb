@@ -21,6 +21,7 @@ class Bitmap
       else
         data = StringIO.new(source.map(&:chr).join)
       end
+      data
     end
 
     def initialize(width_or_source, height=nil, source=nil)
