@@ -29,7 +29,7 @@ class Bitmap
       width
     end
 
-    def initialize(width_or_source, height=nil, source=nil)
+    def initialize(width, height, source)
       if height.nil? && source.nil?
         set_source(width_or_source)
         extract_width_and_height_from_data
