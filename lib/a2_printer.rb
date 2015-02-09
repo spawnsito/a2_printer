@@ -22,10 +22,6 @@ class A2Printer
     write_bytes(ESC_SEQUENCE, 64)
   end
 
-  def set_default
-    reset_formatting
-  end
-
   def reset_formatting
     online
     normal
