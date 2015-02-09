@@ -262,7 +262,7 @@ class A2Printer
 
   def modify_print_density setting
     write_bytes(18, 35)
-    write_bytes(calculate_print_density_setting print_density, print_break_time)
+    write_bytes(setting)
   end
 
   def calculate_print_density_setting print_density, print_break_time
