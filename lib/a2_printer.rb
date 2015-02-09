@@ -7,6 +7,7 @@ class A2Printer
   ESC_SEQUENCE = 27
   CONTROL_PARAMETERS = 55
   LINE_FEED = 10
+  CARRIAGE_RETURN = '\n'
 
   def initialize(connection)
     @connection = connection
