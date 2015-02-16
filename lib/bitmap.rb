@@ -43,7 +43,7 @@ class Bitmap
       ((@height - row_start) > MAX_BYTE) ? MAX_BYTE : (@height - row_start)
 
       if (@height - row_start) > MAX_BYTE)
-
+        MAX_BYTE
       end
     end
 
