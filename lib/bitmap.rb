@@ -23,7 +23,7 @@ class Bitmap
       width_in_bytes = @width / 8
 
       while row_start < @height do
-        chunk_height = ((@height - row_start) > MAX_BYTE) ? MAX_BYTE : (@height - row_start)
+        chunk_height = calculate_chunk_height row_start
         bytes = (0...(width_in_bytes * chunk_height)).map { @data.getbyte }
 
 
