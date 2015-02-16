@@ -25,7 +25,7 @@ class Format
       large: 25
     }
 
-    @connection.write_bytes(29, 33, bytes[size], 10)
+    @connection.write_bytes(29, 33, SIZES[size], 10)
   end
 
   def underline_on(weight)
