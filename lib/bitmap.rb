@@ -38,7 +38,7 @@ class Bitmap
 
     def print_block connection, height, width, *bytes
       start_print connection
-      set_size chunk_height, width_in_bytes, connection
+      set_size height, width, connection
       print_image connection, *bytes
     end
 
