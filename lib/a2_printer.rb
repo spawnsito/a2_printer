@@ -1,6 +1,7 @@
 require "serial_connection"
 require "bitmap"
 require "print_mode"
+require "barcode"
 
 class A2Printer
 
@@ -21,6 +22,7 @@ class A2Printer
   def initialize(connection)
     @connection = connection
     @print_mode = PrintMode.new @connection
+    @barcode = Barcode.new @connection
   end
 
   def begin(heat_time)
@@ -106,29 +108,12 @@ class A2Printer
     bitmap.print @connection
   end
 
-  # Barcodes
-
-  def set_barcode_height(val)
-    # default is 50
-    write_bytes(29, 104, val)
+  def set_barcode_height(height)
+    @barcode.set_height height
   end
 
-  UPC_A   = 0
-  UPC_E   = 1
-  EAN13   = 2
-  EAN8    = 3
-  CODE39  = 4
-  I25     = 5
-  CODEBAR = 6
-  CODE93  = 7
-  CODE128 = 8
-  CODE11  = 9
-  MSI     = 10
-
   def print_barcode(text, type)
-    write_bytes(29, 107, type) # set the type first
-    text.bytes { |b| write(b) }
-    write(0) # Terminator
+    @barcode.print text, type
   end
 
   # Take the printer offline. Print commands sent after this will be
