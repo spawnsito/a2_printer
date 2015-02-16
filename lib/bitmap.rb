@@ -36,7 +36,7 @@ class Bitmap
     private
 
     def print_chunk height, width, *bytes
-      start_print connection
+      start_print
       set_size height, width, connection
       print_image connection, *bytes
     end
