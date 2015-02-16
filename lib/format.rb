@@ -12,6 +12,12 @@ class Format
     large: 25
   }
 
+  ALIGNMENT = {
+    left: 0,
+    center: 1,
+    right: 2
+  }
+
   ESC_SEQUENCE = 27
 
   def initialize connection
