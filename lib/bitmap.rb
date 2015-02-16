@@ -3,7 +3,6 @@ class Bitmap
     MAX_CHUNK_SIZE = 255
 
     def self.from_source connection, source
-
       data = obtain_data source
       width = obtain_width data
       height = obtain_heigth data
