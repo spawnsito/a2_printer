@@ -158,7 +158,7 @@ class A2Printer
       source = args[0]
       bitmap = Bitmap.from_source @connection, source
     else
-      bitmap = Bitmap.new *args
+      bitmap = Bitmap.new @connection, *args
     end
     bitmap
   end
