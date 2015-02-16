@@ -3,6 +3,7 @@ class Barcode
   def initialize connection
     @connection = connection
   end
+
   def set_height(height)
     @connection.write_bytes(29, 104, height)
   end
