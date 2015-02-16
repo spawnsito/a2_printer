@@ -6,6 +6,12 @@ class Format
     thick: 2
   }
 
+  SIZES = {
+    small: 0,
+    medium: 10,
+    large: 25
+  }
+
   ESC_SEQUENCE = 27
 
   def initialize connection
