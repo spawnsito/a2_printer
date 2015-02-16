@@ -13,7 +13,7 @@ class Bitmap
         set_source(source)
         @width = width
         @height = height
-
+        @connection = connection
     end
 
     def wider_than? width
