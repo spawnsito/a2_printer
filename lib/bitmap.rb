@@ -37,7 +37,7 @@ class Bitmap
     private
 
     def to_bytes width
-      width
+      width / 8
     end
 
     def prepare_image width, height
