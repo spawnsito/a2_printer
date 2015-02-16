@@ -20,7 +20,7 @@ class Bitmap
       @width > width
     end
 
-    def print connection
+    def print
       row_start = 0
       width_in_bytes = to_bytes @width
 
