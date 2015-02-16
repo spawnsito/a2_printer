@@ -35,6 +35,11 @@ class Bitmap
     end
 
     private
+
+    def calculate_chunk_height
+
+    end
+
     def start_print connection
       connection.write_bytes(18, 42)
     end
