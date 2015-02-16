@@ -26,7 +26,6 @@ class Bitmap
         chunk_height = calculate_chunk_height row_start
         bytes = prepare_image width_in_bytes, chunk_height
 
-
         start_print connection
         set_size chunk_height, width_in_bytes, connection
         print_image connection, *bytes
