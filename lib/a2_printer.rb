@@ -7,7 +7,6 @@ require "control"
 
 class A2Printer
 
-  DEFAULT_RESOLUTION = 7
   ESC_SEQUENCE = 27
   LINE_FEED = 10
   CARRIAGE_RETURN = "\n"
