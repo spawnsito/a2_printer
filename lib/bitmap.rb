@@ -1,5 +1,4 @@
 class Bitmap
-    attr_reader :width, :height
 
     def self.from_source source
       data = obtain_data source
