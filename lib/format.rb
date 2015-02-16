@@ -44,7 +44,7 @@ class Format
       right: 2
     }
 
-    @connection.write_bytes(0x1B, 0x61, bytes[position])
+    @connection.write_bytes(0x1B, 0x61, ALIGNMENT[position])
   end
 
   def reset
