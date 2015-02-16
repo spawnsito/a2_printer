@@ -47,6 +47,7 @@ class Bitmap
       if (chunk_height) > MAX_BYTE)
         MAX_BYTE
       end
+      chunk_height
     end
 
     def start_print connection
