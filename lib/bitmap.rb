@@ -53,6 +53,9 @@ class Bitmap
     end
 
     private
+    def self.method_name
+
+    end
 
     def set_source(source)
       if source.respond_to?(:getbyte)
