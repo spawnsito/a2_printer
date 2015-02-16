@@ -2,6 +2,7 @@ require "serial_connection"
 require "bitmap"
 require "print_mode"
 require "barcode"
+require "format"
 
 class A2Printer
 
@@ -11,11 +12,6 @@ class A2Printer
   LINE_FEED = 10
   CARRIAGE_RETURN = "\n"
   NOT_ALLOWED_CHAR = 0x13
-  UNDERLINES = {
-    none: 0,
-    normal: 1,
-    thick: 2
-  }
 
   MAXIMUM_WIDTH = 384
 
@@ -23,6 +19,7 @@ class A2Printer
     @connection = connection
     @print_mode = PrintMode.new @connection
     @barcode = Barcode.new @connection
+    @format = Format.new @connection
   end
 
   def begin(heat_time)
@@ -73,32 +70,19 @@ class A2Printer
   end
 
   def set_size(size)
-    bytes = {
-      small: 0,
-      medium: 10,
-      large: 25
-    }
-
-    write_bytes(29, 33, bytes[size], 10)
+    @format.set_size size
   end
 
   def underline_on(weight)
-    weight = sanitized_weight weight
-    write_bytes(ESC_SEQUENCE, 45, weight)
+    @format.underline_on weight
   end
 
   def underline_off
-    underline_on(UNDERLINES[:none])
+    @format.underline_off
   end
 
   def justify(position)
-    bytes = {
-      left: 0,
-      center: 1,
-      right: 2
-    }
-
-    write_bytes(0x1B, 0x61, bytes[position])
+    @format.justify position
   end
 
   def print_bitmap(*args)
@@ -115,6 +99,8 @@ class A2Printer
   def print_barcode(text, type)
     @barcode.print text, type
   end
+
+
 
   # Take the printer offline. Print commands sent after this will be
   # ignored until `online` is called
@@ -202,13 +188,6 @@ class A2Printer
 
   def normal
     @print_mode.normal
-  end
-
-  def sanitized_weight weight
-    result = weight
-    result = UNDERLINES[:none] if weight.nil?
-    result = UNDERLINES[:thick] if weight > UNDERLINES[:thick]
-    result
   end
 
   def obtain_bitmap *args
