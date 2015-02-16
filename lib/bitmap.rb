@@ -43,6 +43,10 @@ class Bitmap
       connection.write_bytes(height, width)
     end
 
+    def
+
+    end
+
     def self.obtain_value data
       tmp = data.getbyte
       value = (data.getbyte << 8) + tmp
