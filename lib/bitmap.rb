@@ -44,6 +44,7 @@ class Bitmap
 
       if (@height - row_start) > MAX_BYTE)
         MAX_BYTE
+      else
       end
     end
 
