@@ -36,7 +36,7 @@ class Bitmap
 
     private
 
-    def calculate_chunk_height
+    def calculate_chunk_height row_start
 
     end
 
