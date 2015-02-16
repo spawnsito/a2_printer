@@ -27,7 +27,7 @@ class Bitmap
         bytes = (0...(width_in_bytes * chunk_height)).map { @data.getbyte }
 
 
-        connection.write_bytes(18, 42)
+        start_print connection
         connection.write_bytes(chunk_height, width_in_bytes)
         connection.write_bytes(*bytes)
         row_start += MAX_BYTE
