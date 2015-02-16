@@ -28,7 +28,7 @@ class Bitmap
         chunk_height = calculate_chunk_height row_start
         bytes = prepare_image width_in_bytes, chunk_height
 
-        print_chunk connection, chunk_height, width_in_bytes, *bytes
+        print_chunk chunk_height, width_in_bytes, *bytes
         row_start += MAX_CHUNK_SIZE
       end
     end
