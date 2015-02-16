@@ -46,7 +46,7 @@ class Bitmap
       chunk_height
     end
 
-    def sanitize
+    def sanitize height
     end
 
     def start_print connection
