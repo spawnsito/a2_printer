@@ -69,9 +69,7 @@ class Bitmap
     end
 
     def self.obtain_heigth data
-      tmp = data.getbyte
-      height = (data.getbyte << 8) + tmp
-      height
+      obtain_value data
     end
 
     def self.obtain_width data
