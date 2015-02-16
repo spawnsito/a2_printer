@@ -41,8 +41,7 @@ class Bitmap
 
     def calculate_chunk_height row_start
       chunk_height = @height - row_start
-      chunk_height = sanitize chunk_height
-      chunk_height
+      sanitize chunk_height
     end
 
     def sanitize height
