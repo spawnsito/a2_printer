@@ -19,12 +19,6 @@ class Format
   end
 
   def set_size(size)
-    bytes = {
-      small: 0,
-      medium: 10,
-      large: 25
-    }
-
     @connection.write_bytes(29, 33, SIZES[size], 10)
   end
 
