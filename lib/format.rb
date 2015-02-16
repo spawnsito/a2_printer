@@ -38,12 +38,6 @@ class Format
   end
 
   def justify(position)
-    bytes = {
-      left: 0,
-      center: 1,
-      right: 2
-    }
-
     @connection.write_bytes(0x1B, 0x61, ALIGNMENT[position])
   end
 
