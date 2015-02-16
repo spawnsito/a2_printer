@@ -48,6 +48,7 @@ class Bitmap
 
     def sanitize height
       return MAX_BYTE if height > MAX_BYTE
+      height
     end
 
     def start_print connection
