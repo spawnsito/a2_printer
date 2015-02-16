@@ -30,6 +30,8 @@ class Bitmap
         start_print connection
         set_size chunk_height, width_in_bytes, connection
         print_image connection, *bytes
+
+        print_block
         row_start += MAX_CHUNK_SIZE
       end
     end
