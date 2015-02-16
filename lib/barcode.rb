@@ -1,5 +1,4 @@
 class Barcode
-    # Barcodes
 
   def initialize connection
     @connection = connection
