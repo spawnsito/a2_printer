@@ -36,7 +36,7 @@ class Bitmap
 
     private
 
-    def prepare_image width_in_bytes
+    def prepare_image width_in_bytes, chunk_height
       (0...(width_in_bytes * chunk_height)).map { @data.getbyte }
     end
 
