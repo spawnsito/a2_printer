@@ -26,6 +26,7 @@ class Bitmap
         chunk_height = ((@height - row_start) > MAX_BYTE) ? MAX_BYTE : (@height - row_start)
         bytes = (0...(width_in_bytes * chunk_height)).map { @data.getbyte }
 
+
         connection.write_bytes(18, 42)
         connection.write_bytes(chunk_height, width_in_bytes)
         connection.write_bytes(*bytes)
@@ -34,6 +35,10 @@ class Bitmap
     end
 
     private
+    def start_print
+
+    end
+
     def self.obtain_value data
       tmp = data.getbyte
       value = (data.getbyte << 8) + tmp
