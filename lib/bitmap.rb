@@ -44,7 +44,7 @@ class Bitmap
 
       chunk_height = @height - row_start
 
-      if (@height - row_start) > MAX_BYTE)
+      if (chunk_height) > MAX_BYTE)
         MAX_BYTE
       else
         (@height - row_start)
