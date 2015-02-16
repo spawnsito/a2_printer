@@ -35,7 +35,7 @@ class Bitmap
     end
 
     private
-    def start_print
+    def start_print connection
       connection.write_bytes(18, 42)
     end
 
