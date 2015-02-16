@@ -36,7 +36,7 @@ class Bitmap
 
     private
 
-    def print_block connection
+    def print_block connection, height
       start_print connection
       set_size chunk_height, width_in_bytes, connection
       print_image connection, *bytes
