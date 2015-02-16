@@ -24,7 +24,7 @@ class Bitmap
 
       while row_start < @height do
         chunk_height = calculate_chunk_height row_start
-        bytes = prepare_image
+        bytes = prepare_image width_in_bytes, chunk_height
 
 
         start_print connection
