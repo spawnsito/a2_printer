@@ -8,18 +8,6 @@ class Barcode
     @connection.write_bytes(29, 104, height)
   end
 
-  UPC_A   = 0
-  UPC_E   = 1
-  EAN13   = 2
-  EAN8    = 3
-  CODE39  = 4
-  I25     = 5
-  CODEBAR = 6
-  CODE93  = 7
-  CODE128 = 8
-  CODE11  = 9
-  MSI     = 10
-
   def print(text, type)
     set_type type
     print text
@@ -39,4 +27,3 @@ class Barcode
     @connection.write(0)
   end
 end
-
