@@ -192,3 +192,4 @@ describe A2Printer do
     end
   end
 end
+
