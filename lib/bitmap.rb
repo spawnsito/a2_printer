@@ -28,7 +28,7 @@ class Bitmap
 
 
         start_print connection
-        set_size chunk_height, width_in_bytes
+        set_size chunk_height, width_in_bytes, connection
         connection.write_bytes(*bytes)
         row_start += MAX_BYTE
       end
