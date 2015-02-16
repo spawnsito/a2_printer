@@ -36,7 +36,7 @@ class Bitmap
 
     private
 
-    def to_bytes
+    def to_bytes width
 
     end
 
