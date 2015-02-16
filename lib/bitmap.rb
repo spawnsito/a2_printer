@@ -21,7 +21,7 @@ class Bitmap
 
     def print connection
       row_start = 0
-      width_in_bytes = @width / 8
+      width_in_bytes = to_bytes @width
 
       while row_start < @height do
         chunk_height = calculate_chunk_height row_start
