@@ -84,7 +84,7 @@ class A2Printer
     bitmap = obtain_bitmap *args
 
     return if bitmap.wider_than? MAXIMUM_WIDTH
-    bitmap.print @connection
+    bitmap.print
   end
 
   def set_barcode_height(height)
