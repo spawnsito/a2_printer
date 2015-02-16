@@ -39,7 +39,7 @@ class Bitmap
       connection.write_bytes(18, 42)
     end
 
-    def set_size height, width
+    def set_size height, width, connection
 
     end
 
