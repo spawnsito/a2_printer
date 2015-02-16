@@ -73,9 +73,7 @@ class Bitmap
     end
 
     def self.obtain_width data
-      tmp = data.getbyte
-      width = (data.getbyte << 8) + tmp
-      width
+      obtain_value data
     end
 
     def set_source(source)
