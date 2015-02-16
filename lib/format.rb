@@ -41,6 +41,11 @@ class Format
     @connection.write_bytes(0x1B, 0x61, bytes[position])
   end
 
+  def reset
+    underline_off
+    justify(:left)
+  end
+
   private
 
   def sanitized_weight weight

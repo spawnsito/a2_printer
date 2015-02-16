@@ -3,6 +3,7 @@ require "bitmap"
 require "print_mode"
 require "barcode"
 require "format"
+require "control"
 
 class A2Printer
 
@@ -20,23 +21,19 @@ class A2Printer
     @print_mode = PrintMode.new @connection
     @barcode = Barcode.new @connection
     @format = Format.new @connection
+    @control = Control.new @connection
   end
 
   def begin(heat_time)
-    reset()
+    reset
     set_control_parameters heat_time
     modify_density(calculate_density_setting)
-  end
-
-  def reset
-    write_bytes(ESC_SEQUENCE, 64)
   end
 
   def reset_formatting
     online
     normal
-    underline_off
-    justify(:left)
+    @format.reset
     set_default_heights
   end
 
@@ -45,15 +42,15 @@ class A2Printer
   end
 
   def feed_rows(rows = 0)
-    write_bytes(ESC_SEQUENCE, 74, rows)
+    @connection.write_bytes(ESC_SEQUENCE, 74, rows)
   end
 
   def flush
-    write_bytes(12)
+    @connection.write_bytes(12)
   end
 
   def test_page
-    write_bytes(18, 84)
+    @connection.write_bytes(18, 84)
   end
 
   def print(string)
@@ -66,7 +63,7 @@ class A2Printer
 
   def write(char)
     return if not_allowed? char
-    write_bytes(char)
+    @connection.write_bytes(char)
   end
 
   def set_size(size)
@@ -100,37 +97,24 @@ class A2Printer
     @barcode.print text, type
   end
 
-
-
-  # Take the printer offline. Print commands sent after this will be
-  # ignored until `online` is called
   def offline
-    write_bytes(ESC_SEQUENCE, 61, 0)
+    @control.offline
   end
 
-  # Take the printer back online. Subsequent print commands will be
-  # obeyed.
   def online
-    write_bytes(ESC_SEQUENCE, 61, 1)
+    @control.online
   end
 
-  # Put the printer into a low-energy state immediately
   def sleep
-    sleep_after(0)
+    @control.sleep
   end
 
-  # Put the printer into a low-energy state after the given number
-  # of seconds
-  def sleep_after(seconds)
-    write_bytes(ESC_SEQUENCE, 56, seconds)
-  end
-
-  # Wake the printer from a low-energy state. This command will wait
-  # for 50ms (as directed by the datasheet) before allowing further
-  # commands to be send.
   def wake
-    write_bytes(255)
-    # delay(50) # ?
+    @control.wake
+  end
+
+  def reset
+    @control.reset
   end
 
   def set_default
@@ -151,8 +135,8 @@ class A2Printer
   end
 
   def modify_density setting
-    write_bytes(18, 35)
-    write_bytes(setting)
+    @connection.write_bytes(18, 35)
+    @connection.write_bytes(setting)
   end
 
   def calculate_density_setting
@@ -164,26 +148,22 @@ class A2Printer
   def set_heat_conditions heat_time
     heat_time = 150 if heat_time.nil?
     heat_interval = 50
-    write_bytes(heat_time)
-    write_bytes(heat_interval)
+    @connection.write_bytes(heat_time)
+    @connection.write_bytes(heat_interval)
   end
 
   def set_default_resolution
-    write_bytes(DEFAULT_RESOLUTION)
+    @connection.write_bytes(DEFAULT_RESOLUTION)
   end
 
   def set_control_parameters heat_time
-    write_bytes(ESC_SEQUENCE, CONTROL_PARAMETERS)
+    @connection.write_bytes(ESC_SEQUENCE, CONTROL_PARAMETERS)
     set_default_resolution
     set_heat_conditions heat_time
   end
 
   def not_allowed? char
     char == NOT_ALLOWED_CHAR
-  end
-
-  def write_bytes(*bytes)
-    bytes.each { |b| @connection.putc(b) }
   end
 
   def normal
