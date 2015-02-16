@@ -60,7 +60,7 @@ class Bitmap
     end
 
     def start_print
-      connection.write_bytes(18, 42)
+      @connection.write_bytes(18, 42)
     end
 
     def set_size height, width, connection
