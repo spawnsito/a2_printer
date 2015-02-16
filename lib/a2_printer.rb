@@ -26,7 +26,7 @@ class A2Printer
 
   def begin(heat_time)
     reset
-    set_control_parameters heat_time
+    @control.set_parameters heat_time
     modify_density(calculate_density_setting)
   end
 
@@ -143,23 +143,6 @@ class A2Printer
     density = 15
     break_time = 15
     (density << 4) | break_time
-  end
-
-  def set_heat_conditions heat_time
-    heat_time = 150 if heat_time.nil?
-    heat_interval = 50
-    @connection.write_bytes(heat_time)
-    @connection.write_bytes(heat_interval)
-  end
-
-  def set_default_resolution
-    @connection.write_bytes(DEFAULT_RESOLUTION)
-  end
-
-  def set_control_parameters heat_time
-    @connection.write_bytes(ESC_SEQUENCE, CONTROL_PARAMETERS)
-    set_default_resolution
-    set_heat_conditions heat_time
   end
 
   def not_allowed? char
