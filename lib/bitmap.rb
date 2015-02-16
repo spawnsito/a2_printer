@@ -9,10 +9,11 @@ class Bitmap
       new(connection, width, height, source)
     end
 
-    def initialize(width, height, source)
+    def initialize(connection, width, height, source)
         set_source(source)
         @width = width
         @height = height
+
     end
 
     def wider_than? width
