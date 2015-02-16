@@ -55,8 +55,8 @@ class Bitmap
     private
     def self.obtain_value data
       tmp = data.getbyte
-      height = (data.getbyte << 8) + tmp
-      height
+      value = (data.getbyte << 8) + tmp
+      value
     end
 
     def self.obtain_data source
