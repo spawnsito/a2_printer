@@ -46,8 +46,6 @@ class Bitmap
 
       if (chunk_height) > MAX_BYTE)
         MAX_BYTE
-      else
-        (@height - row_start)
       end
     end
 
