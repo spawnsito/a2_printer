@@ -40,7 +40,7 @@ class Bitmap
     end
 
     def set_size height, width, connection
-      connection.write_bytes(height, width_in_bytes)
+      connection.write_bytes(height, width)
     end
 
     def self.obtain_value data
