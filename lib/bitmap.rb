@@ -1,6 +1,6 @@
 class Bitmap
 
-    MAX_BYTE = 255
+    MAX_CHUNK_SIZE = 255
     def self.from_source source
       data = obtain_data source
       width = obtain_width data
@@ -29,7 +29,7 @@ class Bitmap
         start_print connection
         set_size chunk_height, width_in_bytes, connection
         print_image connection, *bytes
-        row_start += MAX_BYTE
+        row_start += MAX_CHUNK_SIZE
       end
     end
 
@@ -45,7 +45,7 @@ class Bitmap
     end
 
     def sanitize height
-      return MAX_BYTE if height > MAX_BYTE
+      return MAX_CHUNK_SIZE if height > MAX_CHUNK_SIZE
       height
     end
 
