@@ -43,7 +43,7 @@ class Bitmap
       connection.write_bytes(height, width)
     end
 
-    def
+    def print_data
 
     end
 
