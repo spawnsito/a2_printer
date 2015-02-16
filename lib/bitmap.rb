@@ -37,7 +37,7 @@ class Bitmap
 
     def print_chunk height, width, *bytes
       start_print
-      set_size height, width, connection
+      set_size height, width
       print_image connection, *bytes
     end
 
@@ -63,8 +63,8 @@ class Bitmap
       @connection.write_bytes(18, 42)
     end
 
-    def set_size height, width, connection
-      connection.write_bytes(height, width)
+    def set_size height, width
+      @connection.write_bytes(height, width)
     end
 
     def print_image connection, *bytes
