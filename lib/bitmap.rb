@@ -53,7 +53,7 @@ class Bitmap
     end
 
     private
-    def self.obtain_value
+    def self.obtain_value data
 
     end
 
