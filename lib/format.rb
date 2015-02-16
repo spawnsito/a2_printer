@@ -18,8 +18,6 @@ class Format
     right: 2
   }
 
-  ESC_SEQUENCE = 27
-
   def initialize connection
     @connection = connection
   end
@@ -30,7 +28,7 @@ class Format
 
   def underline_on(weight)
     weight = sanitized_weight weight
-    @connection.write_bytes(ESC_SEQUENCE, 45, weight)
+    @connection.write_bytes(27, 45, weight)
   end
 
   def underline_off
