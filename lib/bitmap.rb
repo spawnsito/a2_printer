@@ -36,6 +36,10 @@ class Bitmap
 
     private
 
+    def do_print
+
+    end
+
     def to_bytes width
       width / 8
     end
