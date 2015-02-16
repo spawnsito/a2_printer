@@ -68,7 +68,7 @@ class Bitmap
     end
 
     def print_image *bytes
-      connection.write_bytes(*bytes)
+      @connection.write_bytes(*bytes)
     end
 
     def self.obtain_value data
