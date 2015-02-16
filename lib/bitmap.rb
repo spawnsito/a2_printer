@@ -46,6 +46,9 @@ class Bitmap
       chunk_height
     end
 
+    def sanitize
+    end
+
     def start_print connection
       connection.write_bytes(18, 42)
     end
