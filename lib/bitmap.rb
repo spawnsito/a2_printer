@@ -37,7 +37,7 @@ class Bitmap
     private
 
     def calculate_chunk_height row_start
-
+      chunk_height = ((@height - row_start) > MAX_BYTE) ? MAX_BYTE : (@height - row_start)
     end
 
     def start_print connection
