@@ -40,7 +40,6 @@ class Bitmap
     end
 
     def calculate_chunk_height row_start
-      ((@height - row_start) > MAX_BYTE) ? MAX_BYTE : (@height - row_start)
 
       chunk_height = @height - row_start
 
