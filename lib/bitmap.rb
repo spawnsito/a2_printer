@@ -1,5 +1,6 @@
 class Bitmap
 
+    MAX_BYTE = 255
     def self.from_source source
       data = obtain_data source
       width = obtain_width data
