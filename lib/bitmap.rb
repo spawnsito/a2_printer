@@ -36,7 +36,7 @@ class Bitmap
 
     private
 
-    def do_print
+    def print_block
 
     end
 
