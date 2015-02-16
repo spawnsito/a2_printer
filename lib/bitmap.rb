@@ -40,12 +40,9 @@ class Bitmap
     end
 
     def calculate_chunk_height row_start
-
       chunk_height = @height - row_start
 
-      if chunk_height > MAX_BYTE
-        return MAX_BYTE
-      end
+      return MAX_BYTE if chunk_height > MAX_BYTE
       chunk_height
     end
 
