@@ -111,10 +111,6 @@ class A2Printer
     char == NOT_ALLOWED_CHAR
   end
 
-  def normal
-    @print_mode.normal
-  end
-
   def obtain_bitmap *args
     only_source_provided = (args.size == 1)
 
@@ -128,7 +124,7 @@ class A2Printer
   end
 
   def method_missing(method, *args)
-    [@connection, @control, @format].each do |property|
+    [@connection, @control, @format, @print_mode].each do |property|
       if property.respond_to?(method)
         return property.send(method, *args)
       end
