@@ -40,15 +40,15 @@ class A2Printer
   end
 
   def feed_rows(rows = 0)
-    @connection.write_bytes(ESC_SEQUENCE, 74, rows)
+    write_bytes(ESC_SEQUENCE, 74, rows)
   end
 
   def flush
-    @connection.write_bytes(12)
+    write_bytes(12)
   end
 
   def test_page
-    @connection.write_bytes(18, 84)
+    write_bytes(18, 84)
   end
 
   def print(string)
@@ -61,7 +61,7 @@ class A2Printer
 
   def write(char)
     return if not_allowed? char
-    @connection.write_bytes(char)
+    write_bytes(char)
   end
 
   def set_size(size)
@@ -133,8 +133,8 @@ class A2Printer
   end
 
   def modify_density setting
-    @connection.write_bytes(18, 35)
-    @connection.write_bytes(setting)
+    write_bytes(18, 35)
+    write_bytes(setting)
   end
 
   def calculate_density_setting
@@ -161,5 +161,14 @@ class A2Printer
       bitmap = Bitmap.new @connection, *args
     end
     bitmap
+  end
+
+  def method_missing(method, *args)
+    if @connection.respond_to?(method)
+      return @connection.send(method, *args)
+    else
+      puts "Method #{m} not found."
+    end
+
   end
 end
