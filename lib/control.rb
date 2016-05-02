@@ -9,11 +9,11 @@ class Control
   end
 
   def offline
-    @connection.write_bytes(ESC_SEQUENCE, 61, 0)
+    write_bytes(ESC_SEQUENCE, 61, 0)
   end
 
   def online
-    @connection.write_bytes(ESC_SEQUENCE, 61, 1)
+    write_bytes(ESC_SEQUENCE, 61, 1)
   end
 
   def sleep
@@ -21,15 +21,15 @@ class Control
   end
 
   def wake
-    @connection.write_bytes(255)
+    write_bytes(255)
   end
 
   def reset
-    @connection.write_bytes(ESC_SEQUENCE, 64)
+    write_bytes(ESC_SEQUENCE, 64)
   end
 
   def set_parameters heat_time
-    @connection.write_bytes(ESC_SEQUENCE, CONTROL_PARAMETERS)
+    write_bytes(ESC_SEQUENCE, CONTROL_PARAMETERS)
     set_default_resolution
     set_heat_conditions heat_time
   end
@@ -37,17 +37,25 @@ class Control
   private
 
   def sleep_after(seconds)
-    @connection.write_bytes(ESC_SEQUENCE, 56, seconds)
+    write_bytes(ESC_SEQUENCE, 56, seconds)
   end
 
   def set_heat_conditions heat_time
     heat_time = 150 if heat_time.nil?
     heat_interval = 50
-    @connection.write_bytes(heat_time)
-    @connection.write_bytes(heat_interval)
+    write_bytes(heat_time)
+    write_bytes(heat_interval)
   end
 
   def set_default_resolution
-    @connection.write_bytes(DEFAULT_RESOLUTION)
+    write_bytes(DEFAULT_RESOLUTION)
+  end
+
+  def method_missing(method, *args)
+      if @connection.respond_to?(method)
+        return @connection.send(method, *args)
+      else
+        puts "Method #{m} not found."
+      end
   end
 end
