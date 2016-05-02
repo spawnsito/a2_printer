@@ -24,7 +24,7 @@ class A2Printer
 
   def begin(heat_time)
     reset
-    @control.set_parameters heat_time
+    set_parameters heat_time
     modify_density(calculate_density_setting)
   end
 
@@ -95,26 +95,6 @@ class A2Printer
     @barcode.print text, type
   end
 
-  def offline
-    @control.offline
-  end
-
-  def online
-    @control.online
-  end
-
-  def sleep
-    @control.sleep
-  end
-
-  def wake
-    @control.wake
-  end
-
-  def reset
-    @control.reset
-  end
-
   def set_default
     reset_formatting
   end
@@ -164,11 +144,13 @@ class A2Printer
   end
 
   def method_missing(method, *args)
-    if @connection.respond_to?(method)
-      return @connection.send(method, *args)
-    else
-      puts "Method #{m} not found."
+    [@connection, @control].each do |property|
+      if property.respond_to?(method)
+        return property.send(method, *args)
+      end
     end
+
+    puts "Method #{m} not found."
 
   end
 end
