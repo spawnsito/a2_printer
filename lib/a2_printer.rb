@@ -31,7 +31,7 @@ class A2Printer
   def reset_formatting
     online
     normal
-    @format.reset
+    reset
     set_default_heights
   end
 
@@ -62,22 +62,6 @@ class A2Printer
   def write(char)
     return if not_allowed? char
     write_bytes(char)
-  end
-
-  def set_size(size)
-    @format.set_size size
-  end
-
-  def underline_on(weight)
-    @format.underline_on weight
-  end
-
-  def underline_off
-    @format.underline_off
-  end
-
-  def justify(position)
-    @format.justify position
   end
 
   def print_bitmap(*args)
@@ -144,7 +128,7 @@ class A2Printer
   end
 
   def method_missing(method, *args)
-    [@connection, @control].each do |property|
+    [@connection, @control, @format].each do |property|
       if property.respond_to?(method)
         return property.send(method, *args)
       end
